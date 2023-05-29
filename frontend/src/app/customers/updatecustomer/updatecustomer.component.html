@@ -1,0 +1,21 @@
+<form [formGroup]="editCustomerForm" (ngSubmit)="onSubmit()">
+  <div class="d-flex justify-content-center">
+    <div class="flex-row">
+      <label for="" class="text-center p-2 text-warning bg-primary-subtle m-2 rounded-4 fs-4">frist name</label>
+      <input formControlName="fname" type="text" class="p-1 bg-info bg-opacity-10 border border-info border-start-0 rounded-end border border-2" />
+      <label for="" class="text-center p-2 text-warning bg-primary-subtle m-2 rounded-4 fs-4">last name</label>
+      <input formControlName="lname" type="text" class="p-1 bg-info bg-opacity-10 border border-info border-start-0 rounded-end border border-2" />
+      <label for="" class="text-center p-2 text-warning bg-primary-subtle m-2 rounded-4 fs-4">phone</label>
+      <input formControlName="phone" type="text" class="p-1 bg-info bg-opacity-10 border border-info border-start-0 rounded-end border border-2" />
+      <label for="" class="text-center p-2 text-warning bg-primary-subtle m-2 rounded-4 fs-4">email</label>
+      <input formControlName="email" type="email" class="p-1 bg-info bg-opacity-10 border border-info border-start-0 rounded-end border border-2" />
+      <label for="" class="text-center p-2 text-warning bg-primary-subtle m-2 rounded-4 fs-4">address</label>
+      <input formControlName="address" type="text"  class="p-1 bg-info bg-opacity-10 border border-info border-start-0 rounded-end border border-2"/>
+      <div class="text-center">
+        <button type="submit" class="btn text-warning bg-primary-subtle m-1 rounded-4 border border-5">
+          <i class="bi bi-person-plus m-2"></i>Update Customer
+        </button>
+      </div>
+    </div>
+  </div>
+</form>

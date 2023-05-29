@@ -1,0 +1,48 @@
+<p class=" p-1 text-warning bg-primary-subtle m-1 rounded-4 fs-4"><i class="bi bi-person-fill m-2"></i>employees</p>
+
+<form [formGroup]="empoloyeesForm" (ngSubmit)="onSubmit()">
+  <div class="d-flex justify-content-center">
+    <div class="flex-row">
+      <label for="" class=" p-1 text-warning bg-primary-subtle m-1 rounded-4 fs-4">Name</label>
+      <input formControlName="name" type="text" class="p-1 bg-info bg-opacity-10 border border-info border-start-0 rounded-end border border-2" />
+      <label for="" class=" p-1 text-warning bg-primary-subtle m-1 rounded-4 fs-4">Phone</label>
+      <input formControlName="phone" type="text" class="p-1 bg-info bg-opacity-10 border border-info border-start-0 rounded-end border border-2" />
+      <label  for="" class=" p-1 text-warning bg-primary-subtle m-1 rounded-4 fs-4">Email</label>
+      <input formControlName="email" type="email" class="p-1 bg-info bg-opacity-10 border border-info border-start-0 rounded-end border border-2" />
+      <label  for="" class=" p-1 text-warning bg-primary-subtle m-1 rounded-4 fs-4">Birthday</label>
+      <input formControlName="birthday" type="text" class="p-1 bg-info bg-opacity-10 border border-info border-start-0 rounded-end border border-2"/>
+      <button type="submit" class="btn  text-warning bg-primary-subtle m-2 rounded-4 border border-5">
+        <i class="bi bi-person-plus m-2"></i>ADD CLIANT
+      </button>
+    </div>
+  </div>
+</form>
+<div class="d-flex justify-content-center">
+  <label for="" class=" p-1 text-warning bg-primary-subtle m-1 rounded-4 fs-4">Search</label>
+  <input type="text" class="m-2 p-1 bg-info bg-opacity-10 border border-info border-start-0 rounded-end border border-2" [(ngModel)]="searchField">
+  <button class="text-warning bg-primary-subtle m-2 rounded-4 border border-5"(click)="searchInEmployee()">search</button>
+</div>
+<div>
+  <table class="table table-success table-hover">
+    <thead>
+      <tr>
+        <th scope="col" class="m-2 p-2 text-warning bg-primary-subtle m-2 rounded-4">#</th>
+        <th scope="col" class="m-2 p-2 text-warning bg-primary-subtle m-2 rounded-4">Full Name</th>
+        <th scope="col" class="m-2 p-2 text-warning bg-primary-subtle m-2 rounded-4">Phone</th>
+        <th scope="col" class="m-2 p-2 text-warning bg-primary-subtle m-2 rounded-4">Email</th>
+        <th scope="col" class="m-2 p-2 text-warning bg-primary-subtle m-2 rounded-4">Birthday</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let employees of empoloyees;let i=index" >
+        <td scope="row">
+          {{i+1}}
+        </td>
+        <td class="m-2 p-2 text-info bg-primary-subtle m-2 rounded-4">{{employees.name}}</td>
+        <td class="m-2 p-2 text-info bg-primary-subtle m-2 rounded-4">{{employees.phone}}</td>
+        <td class="m-2 p-2 text-info bg-primary-subtle m-2 rounded-4">{{employees.email}}</td>
+        <td class="m-2 p-2 text-info bg-primary-subtle m-2 rounded-4">{{employees.birthday}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

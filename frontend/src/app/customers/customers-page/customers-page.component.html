@@ -1,0 +1,52 @@
+<p class=" p-1 text-warning bg-primary-subtle m-1 rounded-4 fs-4"><i class="bi bi-person-fill m-2"></i>customers</p>
+
+<form [formGroup]="customersForm" (ngSubmit)="onSubmit()">
+  <div class="d-flex justify-content-center ">
+    <div class="flex-row " >
+      <label for="" class=" p-1 text-warning bg-primary-subtle m-1 rounded-4 fs-4">frist name</label>
+      <input formControlName="fname" type="text"  class="p-1 bg-info bg-opacity-10 border border-info border-start-0 rounded-end border border-2"/>
+      <label for="" class=" p-1 text-warning bg-primary-subtle m-1 rounded-4 fs-4">last name</label>
+      <input formControlName="lname" type="text" class="p-1 bg-info bg-opacity-10 border border-info border-start-0 rounded-end border border-2" />
+      <label for="" class=" p-1 text-warning bg-primary-subtle m-1 rounded-4 fs-4">phone</label>
+      <input formControlName="phone" type="text" class="p-1 bg-info bg-opacity-10 border border-info border-start-0 rounded-end border border-2"/>
+      <label  for="" class=" p-1 text-warning bg-primary-subtle m-1 rounded-4 fs-4">email</label>
+      <input formControlName="email" type="email" class="p-1 bg-info bg-opacity-10 border border-info border-start-0 rounded-end border border-2" />
+      <label  for=""class=" p-1 text-warning bg-primary-subtle m-1 rounded-4 fs-4">address</label>
+      <input formControlName="address" type="text" class="p-1 bg-info bg-opacity-10 border border-info border-start-0 rounded-end border border-2"/>
+      <div class="d-flex justify-content-center ">
+        <button type="submit" class="btn  text-warning bg-primary-subtle m-1 rounded-4 border border-5 ">
+          <i class="bi bi-person-plus m-2 "></i>ADD CLIANT
+        </button>
+      </div>
+    </div>
+  </div>
+</form>
+
+<div>
+  <table class="table table-success table-hover">
+    <thead>
+      <tr>
+        <th scope="col" class="m-2 p-2 text-warning bg-primary-subtle m-2 rounded-4">#</th>
+        <th scope="col" class="m-2 p-2 text-warning bg-primary-subtle m-2 rounded-4">First Name</th>
+        <th scope="col" class="m-2 p-2 text-warning bg-primary-subtle m-2 rounded-4">Last Name</th>
+        <th scope="col" class="m-2 p-2 text-warning bg-primary-subtle m-2 rounded-4">phone</th>
+        <th scope="col" class="m-2 p-2 text-warning bg-primary-subtle m-2 rounded-4">email</th>
+        <th scope="col" class="m-2 p-2 text-warning bg-primary-subtle m-2 rounded-4">address</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let customer of customers;let i=index" >
+        <td scope="row">
+          {{i+1}} <i class="bi bi-eye-slash text-warning m-2"  routerLink="/viewCustomer/{{customer._id}}"></i
+          ><i class="bi bi-pencil text-primary m-2" routerLink="/update/{{customer._id}}"></i
+          ><i class="bi bi-trash3 text-danger m-2" (click)="deletecustomer(customer)"></i>
+        </td>
+        <td  class="m-2 p-2 text-info bg-primary-subtle m-2 rounded-4">{{customer.fname}}</td>
+        <td  class="m-2 p-2 text-info bg-primary-subtle m-2 rounded-4">{{customer.lname}}</td>
+        <td  class="m-2 p-2 text-info bg-primary-subtle m-2 rounded-4">{{customer.phone}}</td>
+        <td  class="m-2 p-2 text-info bg-primary-subtle m-2 rounded-4" >{{customer.email}}</td>
+        <td  class="m-2 p-2 text-info bg-primary-subtle m-2 rounded-4">{{customer.address}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
